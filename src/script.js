@@ -2,37 +2,26 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //ESCREVA SEU CÓDIGO AQUI!!
-function verificarErro(resultado) {
-  if (resultado === undefined || resultado > 1000000) {
-    return 'ERRO'
-  } else {
-    return resultado
-  }
-
-}
-
-
-function Calculadora(num1, num2, operador) {
+function Calculadora(numero1, numero2, operador) {
   let resultado
-  num1 = Number(num1)
-  num2 = Number(num2)
+  let num1 = parseInt(numero1)
+  let num2 = parseInt(numero2)
 
   switch (operador) {
     case '+':
       resultado = num1 + num2
-      return verificarErro(resultado);
+      break;
     case '-':
       resultado = num1 - num2
-      return verificarErro(resultado);
+      break;
     case '/':
       resultado = num1 / num2
-      return verificarErro(resultado);
+      break;
     case '*':
       resultado = num1 * num2
-      return verificarErro(resultado);
+      break;
     case 'e':
       resultado = num1
-
       if (num2 === 0) {
         resultado = 0
       } else {
@@ -40,10 +29,14 @@ function Calculadora(num1, num2, operador) {
           resultado *= num1
         }
       }
-      
-      return verificarErro(resultado);
+      break;
   }
 
+  if (resultado == undefined || resultado > 1000000) {
+    resultado = 'ERRO'
+  }
+
+  return resultado
 }
 
 
